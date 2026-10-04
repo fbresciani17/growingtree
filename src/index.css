@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-family-50: #f4f7f4;
+  --color-family-100: #e5eee5;
+  --color-family-200: #cddfce;
+  --color-family-300: #a6c6a8;
+  --color-family-400: #77a67b;
+  --color-family-500: #528757;
+  --color-family-600: #3f6c44;
+  --color-family-700: #335637;
+  --color-family-800: #2b452e;
+  --color-family-900: #243927;
+  --color-family-950: #111f13;
+
+  --color-warm-50: #faf8f5;
+  --color-warm-100: #f5f0e8;
+  --color-warm-200: #eae0d0;
+  --color-warm-300: #dccab1;
+  --color-warm-400: #c8ad8d;
+  --color-warm-500: #b8946e;
+  --color-warm-600: #aa7f5c;
+  --color-warm-700: #8e664b;
+  --color-warm-800: #735340;
+  --color-warm-900: #5e4537;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Lora', Georgia, Cambria, 'Times New Roman', serif;
+
+  --shadow-soft: 0 4px 20px -2px rgba(36, 57, 39, 0.08);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 14px 38px rgba(36, 57, 39, 0.14);
+  --shadow-glow: 0 0 25px rgba(82, 135, 87, 0.25);
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  font-family: var(--font-sans);
+  background-color: #FAF8F5;
+  color: #1e293b;
+}
+
+/* Custom Tree Dots Background */
+.tree-canvas-bg {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#D6CEBF 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cddfce;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a6c6a8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(82, 135, 87, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(82, 135, 87, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pulse-search-match {
+  animation: pulseGlow 2s infinite;
+}
